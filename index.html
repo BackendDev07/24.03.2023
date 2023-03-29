@@ -12,7 +12,7 @@
   margin-bottom: 50px;color: aqua;margin-top: 150px;">My To Do List</h2>
   <div class="box" style="width: 50%; display: flex;align-items: center;justify-content: center;gap: 20px;">
     <input style="outline: none;background-color: inherit; border-bottom: 1px solid aqua; color: aqua; padding: 10px 20px;" type="text" id="myInput" style="width: 50%;" placeholder="Enter a task here">
-  <span style="border-radius: 5px;" onclick="newElement()" class="addBtn">Add</span>
+  <span style="border-radius: 5px;" id="myBtn" onclick="newElement()" class="addBtn">Add</span>
   </div>
 </div>
 
@@ -20,6 +20,13 @@
   <li style="background-color: #000;">hello</li>
 </ul>
 
-<script src="./main.js"></script>
+<script src="./main.js">
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("myBtn").click();
+    }
+});
+</script>
 </body>
 </html>
